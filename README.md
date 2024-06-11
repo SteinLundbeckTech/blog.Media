@@ -1,6 +1,6 @@
-# Stein Lundbeck Tech blog - Reusable media resizer
+# Stein Lundbeck Tech blog - Sass reusable media resizer
 
-## The articke show how to make an easy to use reusable media resizer that handles all device sizes
+## The articke show how to make an easy to use reusable media resizer that handles all device sizes using *[Sass](https://sass-lang.com/)*
 
 ### The folder *[Src](https://github.com/SteinLundbeckTech/blog.Media/tree/main/Src)* contains the main media implementation and a file that imports and uses media resize funtions
 
