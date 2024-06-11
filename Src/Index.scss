@@ -1,3 +1,7 @@
+/*
+    TESTER
+*/
+
 @import "Media";
 
 #Demo {
@@ -15,7 +19,7 @@
     }
 }
 
-@include media(LG) {
+@include device() {
     #Demo {
         background-color: yellow;
     }

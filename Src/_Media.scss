@@ -2,10 +2,11 @@
     Stein Lunbbeck Tech blog
 */
 
-$mediaBreakpoints: ( XS: 0px, SM: 576px, MD: 768px, LG: 992px, XL: 1200px );
+$mediaBreakpoints: ( XS: 0px, SM: 576px, MD: 768px, LG: 992px, XL: 1200px, XXL: 1920px );
+$mediaDevices: ( Phone: XS, Tablet: SM, Laptop: MD, Computer: LG, Screen: XL, BigScreen: XXL );
 $mediaOrientation: ( 0: Any, 1: Portrait, 2: Landscape );
 
-@mixin media($size: MD, $orientation: Any, $mode: Up, $minWidth: null, $maxWidth: null) {
+@function mediaStr($size, $orientation, $mode, $minWidth, $maxWidth) {
     $mode: to-upper-case(inspect($mode));
     $size: to-upper-case(inspect($size));
     $width: map-get($mediaBreakpoints, $size);
@@ -52,7 +53,19 @@ $mediaOrientation: ( 0: Any, 1: Portrait, 2: Landscape );
         $query: $query + " and (orientation: " + to-lower-case(inspect($orientation)) + ")";
     }
 
-    @media #{$query} {
+    @return $query;
+}
+
+@mixin media($size: MD, $orientation: Any, $mode: Up, $minWidth: null, $maxWidth: null) {
+    @media #{mediaStr($size, $orientation, $mode, $minWidth, $maxWidth)} {
+        @content;
+    }
+}
+
+@mixin device($device: Laptop, $orientation: Any, $mode: Up, $minWidth: null, $maxWidth: null) {
+    $size: map-get($mediaDevices, $device);
+
+    @media #{mediaStr($size, $orientation, $mode, $minWidth, $maxWidth)} {
         @content;
     }
 }
