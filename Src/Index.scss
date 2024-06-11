@@ -14,3 +14,9 @@
         font-size: 19px;
     }
 }
+
+@include media(LG) {
+    #Demo {
+        background-color: yellow;
+    }
+}

@@ -1,6 +1,3 @@
-/*
-    Stein Lunbbeck Tech blog
-*/
 #Demo {
   font-size: 10px;
   font-weight: bold;
@@ -12,5 +9,10 @@
 @media (min-width: 768px) {
   #Demo {
     font-size: 19px;
+  }
+}
+@media (min-width: 992px) {
+  #Demo {
+    background-color: yellow;
   }
 }
